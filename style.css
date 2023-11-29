@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+img,
+picture,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+span {
+  display: inline-block;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 3px;
+  border: 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: max-content;
+  background-color: transparent;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+}
+/* default style */
+
+header {
+  z-index: 100;
+  position: absolute;
+  inset: auto 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+nav {
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  transition: 0.1s;
+  color: white;
+  padding: 1.5rem 1.8rem;
+}
+nav a:hover {
+  background-color: #ffffff61;
+}
+header h2 {
+  color: #fff;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.main--home {
+  background: linear-gradient(
+    140deg,
+    rgba(255, 166, 0, 0.748),
+    rgba(220, 20, 60, 0.753)
+  );
+}
+.main--about {
+  background: linear-gradient(
+    140deg,
+    rgba(0, 123, 255, 0.748),
+    rgba(25, 163, 135, 0.753)
+  );
+}
+
+/* PAGE TRANSITIONS */
+
+.transition-1 {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  background-color: rgb(41, 44, 44);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.transition-1[data-active="true"] {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.transition-2 {
+  position: fixed;
+  inset: 0;
+  width: 0;
+  z-index: 101;
+  background-color: rgb(41, 44, 44);
+  pointer-events: none;
+  transition: 0.5s;
+}
+.transition-2[data-active="true"] {
+  width: 100%;
+  pointer-events: visible;
+}
